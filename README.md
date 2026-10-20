@@ -2,6 +2,8 @@
 
 梦长的项目入口页。一个静态站点，一个索引，目前一个入口。
 
+- 线上：**https://mengchang.pages.dev**
+- 仓库：**https://github.com/Cleftgou/portal**
 - 视觉：米色纸底、巨号混排标题（无衬线 + 衬线斜体）、一个朱砂色、程序生成的金属物件
 - 3D：Three.js（本地 vendor，无 CDN 依赖），环境贴图用 canvas 现场画，没有模型文件
 - 依赖：无。单页 HTML + CSS + 原生 JS，Three.js 是唯一的第三方库
@@ -20,10 +22,16 @@ python -m http.server 8080
 ## 部署
 
 ```powershell
-npx wrangler pages deploy . --project-name mengchang
+npx wrangler pages deploy . --project-name mengchang --branch main
 ```
 
-或把仓库连到 Cloudflare Pages（Build command 留空，Output directory 填 `/`）。
+Cloudflare Pages 项目 `mengchang` 已创建，production branch 是 `main`。
+当前是命令行直传；如果想推 Git 就自动部署，可以在
+Dashboard → Workers & Pages → mengchang → Settings → Builds & deployments 里连上这个仓库
+（Build command 留空，Output directory 填 `/`）。
+
+> 本机 `~/.gitconfig` 里给 github.com 配了 `http://127.0.0.1:7897` 代理，代理没开时
+> `git push` 会失败。临时绕过：`git -c 'http.https://github.com.proxy=' push`。
 
 ## 加一个项目
 
