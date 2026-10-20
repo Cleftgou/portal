@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 · 梦长 · 项目集</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+<style>
+@font-face{
+  font-family:'Cormorant';
+  src:url('./assets/fonts/cormorant-garamond-5.woff2') format('woff2');
+  font-weight:300;font-style:italic;font-display:swap;
+}
+:root{
+  --paper:#efede6;--ink:#1a1917;--ink-2:#55524a;--ink-3:#8c887d;
+  --rule:rgba(26,25,23,.15);--accent:#d9482b;
+  --sans:'PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',
+         'Noto Sans SC',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Cormorant',Georgia,'Times New Roman',serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);-webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.30;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.pad{padding-left:clamp(22px,4vw,72px);padding-right:clamp(22px,4vw,72px)}
+.top{display:flex;align-items:baseline;gap:12px;padding-top:26px;padding-bottom:22px;border-bottom:1px solid var(--rule)}
+.top b{font-size:17px;font-weight:700;letter-spacing:.02em}
+.top span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+main{flex:1;display:flex;align-items:center}
+.block{padding:8vh 0}
+.no{
+  font-family:var(--serif);font-style:italic;font-weight:300;line-height:.86;
+  font-size:clamp(96px,18vw,240px);letter-spacing:-.02em;
+  color:var(--ink);
+}
+h1{margin-top:clamp(18px,3vw,30px);font-size:clamp(24px,3.2vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+p{margin-top:14px;font-size:15px;line-height:1.9;color:var(--ink-2);max-width:26em}
+.back{
+  display:inline-flex;align-items:center;gap:10px;margin-top:clamp(28px,4vw,44px);
+  font-size:14px;position:relative;padding-bottom:5px;
+  color:inherit;text-decoration:none;
+}
+.back::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;opacity:.3}
+.back::before{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);
+}
+.back:hover::before{transform:scaleX(1)}
+.back i{font-style:normal;color:var(--accent);transition:transform .45s var(--ease)}
+.back:hover i{transform:translate(-4px,-4px)}
+footer{
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  border-top:1px solid var(--rule);padding-top:18px;padding-bottom:34px;
+  font-size:12px;color:var(--ink-3);letter-spacing:.04em;
+}
+@media (prefers-reduced-motion:reduce){.back::before,.back i{transition:none}}
+</style>
+</head>
+<body>
+  <header class="top pad"><b>梦长</b><span>Mengchang</span></header>
+  <main class="pad">
+    <div class="block">
+      <div class="no">404</div>
+      <h1>这里没有东西。</h1>
+      <p>你要找的页面可能被移走了，或者从来没有过。<br />门都在首页。</p>
+      <a class="back" href="/"><i>↖</i> 回到项目集</a>
+    </div>
+  </main>
+  <footer class="pad">
+    <span>© 2026 梦长 Mengchang</span>
+    <span>404 — not found</span>
+  </footer>
+</body>
+</html>
